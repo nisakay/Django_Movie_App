@@ -1,0 +1,15 @@
+{% extends "MovieUpapp/MovieUpbase.html" %}
+{% load static %}
+from .models import Movie
+
+{% block title %}MovieUp| Home{% endblock %}
+
+{% block header%}Welcome to MovieUp{% endblock %}
+
+{% block content %}
+
+{% for movie in movies %}
+<h3><span>{{ movie.title | title }}</span></h3>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "MovieUpapp/MovieUpbase.html" %}
+{% load static %}
+from .models import Movie
+
+{% block title %}Movie Updates{% endblock%}
+
+{% block header %}Delete This Movie{% endblock %}
+
+{% block content %}
+
+<div class="confirm_container">
+    <form method="POST" action="{% url 'ConfirmDelete' movies.pk %}">
+        <h4 style="color:red;">Confirm Delete This Movie</h4>
+        <h4 class="description-text">Are You Sure You Want to Delete this movie from the Database?</h4>
+            <div class="formObject_container">
+                {% csrf_token %}
+                {{ form.as_p }}
+            </div>
+            <div class="formBtn_container">
+                <input type="submit" class="btn" value=" YES !">
+                <a href="{% url 'MovieIndex' %}"><button type="button" class="btn">Go Back</button></a>
+            </div>
+    </form>
+</div>
+
+{% endblock %}

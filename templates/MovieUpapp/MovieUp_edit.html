@@ -1,0 +1,26 @@
+{% extends "MovieUpapp/MovieUpbase.html" %}
+{% load static %}
+from .models import Movie
+
+{% block title %}Movie Updates{% endblock%}
+
+{% block header %}Edit Movies{% endblock %}
+
+{% block content %}
+
+    <div class="edit_container">
+        <form method="POST">
+            <div class="form_container">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                {{ form.as_p }}
+            </div>
+            <div class="formBtn_container">
+                <input type="submit" class="btn" value="Update Movies" name="Update_Item">
+                <a href="{% url 'MovieUpHome' %}"><button type="button" class="btn">Cancel</button></a>
+            </div>
+        </form>
+    </div>
+
+
+{% endblock %}

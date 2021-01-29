@@ -1,0 +1,17 @@
+{% extends "MovieUpapp/MovieUpbase.html" %}
+{% load static %}
+from .models import Movie
+
+{% block title %}Movie List{% endblock%}
+
+{% block header %}Movie List{% endblock %}
+
+{% block content %}
+
+{% for movie in movies %}
+<!-- passing arguments  -->
+<a href="{% url 'MovieDetails' movie.pk %}" ><h3>Genre: {{ movie.genre | upper }} <br> Title: {{ movie.title | title }} <br> Release Date: {{ movie.release_date }} <br> Description: {{ movie.description }} </h3></a>
+
+{% endfor %}
+
+{% endblock %}

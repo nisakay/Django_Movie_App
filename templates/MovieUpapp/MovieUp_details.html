@@ -1,0 +1,27 @@
+{% extends "MovieUpapp/MovieUpbase.html" %}
+{% load static %}
+
+{% block title %}Movie Details{% endblock%}
+
+{% block header %}Movie Details{% endblock %}
+
+
+{% block content %}
+
+<div class="details_container" align="left">
+    <h4>Genre: {{ movie.genre | upper }}</h4>
+    <h4>Title: {{ movie.title | title }}</h4>
+    <h4>Release Date: {{ movie.release_date }}</h4>
+    <h4>Description: </h4>
+<<<<<<<<< Temporary merge branch 1
+    <h4><span class="description-text">"{{ movie.description }}"</span></h4>
+     <div class="formBtn_container">
+        <a href="{% url 'EditMovie' movie.pk %}"><button type="button" class="btn">Update movie</button></a>
+        <a href="{% url 'DeleteMovie' movie.pk %}"><button type="button" class="btn">Delete movie</button></a>
+        <a href="{% url 'MovieIndex' %}"><button type="button" class="btn">Cancel</button></a>
+    </div>
+
+</div>
+
+
+{% endblock %}

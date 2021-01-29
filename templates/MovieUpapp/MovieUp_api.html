@@ -1,0 +1,40 @@
+{% extends "MovieUpapp/MovieUpbase.html" %}
+{% load static %}
+{% block title %}Movie API{% endblock%}
+
+{% block header %}Movie API{% endblock %}
+
+{% block content %}
+  <h3>Movie API</h3>
+  <form method="get">
+    <input type="text" name="movie">
+    <button type="submit" class="btn">search Movies</button>
+  </form>
+  {% if movie %}
+    <p><strong>This is {{ movie.Title }}</strong>  <strong>{{ movie.Genre }}</strong> </p>
+  {% endif %}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
